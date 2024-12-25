@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+          }
+      
+          .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 800px;
+          }
+      
+          .row {
+            display: flex;
+            justify-content: space-between;
+          }
+      
+          .left-column {
+            flex: 1;
+            padding-right: 20px;
+          }
+      
+          .right-column {
+            flex: 1;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+          }
+      
+          .right-column h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #007BFF;
+          }
+      
+          #metrics-display {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+          }
+      
+          textarea,
+          select,
+          button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+          }
+      
+          button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+          }
+      
+          button:hover {
+            background-color: #0056b3;
+          }
+      
+          .result {
+            margin-top: 20px;
+            font-size: 16px;
+            color: green;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Model Prediction and Metrics</h1>
+        <div class="row">
+          <!-- Left column -->
+          <div class="left-column">
+            <select id="model-select" onchange="fetchMetrics()">
+              <option value="model1">Model Naive Bayes</option>
+              <option value="model2">Model DecisionTree</option>
+              <option value="model3">Model RandomForest</option>
+              <option value="model4">Model SVM</option>
+              <option value="model5">Model LogisticRegression</option>
+            </select>
+            <textarea id="text-input" placeholder="Enter your text here..."></textarea>
+            <button onclick="makePrediction()">Predict</button>
+            <div class="result" id="result"></div>
+          </div>
+    
+          <!-- Right column -->
+          <div class="right-column">
+            <h2>Model Metrics</h2>
+            <div id="metrics-display">
+              <!-- Metrics will appear here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>
